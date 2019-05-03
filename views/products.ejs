@@ -20,7 +20,7 @@
                         <p class="card-text">id:
                             <%= list[i].id %>
                         </p>
-                        <a href="/order/addOrder" class="btn btn-primary">Order</a>
+                        <a href="/order/addOrder/<%= list[i].id %>" class="btn btn-primary">Order</a>
                         <a href="products/<%= list[i].id %>" class="btn btn-info">Details</a>
                     </div>
                 </div>

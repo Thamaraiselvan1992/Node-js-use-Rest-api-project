@@ -1,1 +1,20 @@
-<h3>Order</h3>
+<%- include('partical/header'); -%>
+<body style="padding:10% 30% 10%">
+    <div class="container bg-light">
+     <h3>Add Product</h3>
+        <form action="/order" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Product Id</label>
+                <input type="text" class="form-control" name="productId" value="<%= id %>" readonly>
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="text" class=" form-control" name="quantity" placeholder="Quantity" value="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+                <a class="btn btn-secondary" href="/order"><i class="fa fa-list-alt"></i> View All</a>
+            </div>
+        </form>
+    </div>
+</body>

@@ -5,8 +5,9 @@ const product = require('../models/product.model')
 const router = express.Router();
 const orderController=require('../controller/order.controller')
 router.get('/',orderController.orders_get_all)
-router.get('/addOrder', (req, res, next) => {
+router.get('/addOrder/:productId', (req, res, next) => {
     res.render('addOrder', {
+        id:req.params.productId,
         tittle: 'Add order'
     })
 })
