@@ -1,0 +1,40 @@
+<%- include('partical/header'); -%>
+<body>
+    <div class="container bg-light" style="padding:5%">
+       <center> <h2>Order List<a class="btn btn-success float-right" href="#">Buy Now</a></h2></center>
+
+       <br>
+        <div class="row">
+                <% for(var i=0; i < list.length; i++) { %>
+            <div class="col-3">
+                <div class="card" style="width:250px">
+            
+                    <img class="card-img-top" src="<%= list[i].product.productImage %>" width="200" height="140" alt="" />
+                
+                    <div class="card-body">
+                        <h4 class="card-title">Name:
+                            <%= list[i].product.name %>
+                        </h4>
+                        <p class="card-text">Quantity:
+                            <%= list[i].quantity %>
+                        </p>
+                        <p class="card-text">price:
+                            <%= list[i].product.price %>
+                        </p>
+                        <p class="card-text">Order id:
+                            <%= list[i].id %>
+                        </p>
+                        <a href="order/view/<%= list[i].id %>" class="btn btn-primary">View</a>
+                        <a href="order/delete/<%= list[i].id %>" class="btn btn-info">Delete</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <% } %>
+        </div>
+
+    </div>
+</body>
+
+</html>

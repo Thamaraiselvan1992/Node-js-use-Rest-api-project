@@ -1,0 +1,25 @@
+<%- include('partical/header'); -%>
+<body style="padding:10% 30% 10%">
+    <div class="container bg-light">
+     <h3>Add Product</h3>
+        <form action="/products" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <input type="hidden" name="_id" value="">
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Product Name"  >
+            </div>
+            <div class="form-group">
+                <label>product price</label>
+                <input type="text" class=" form-control" name="price" placeholder="price" value="">
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" class="form-control" name="productImage" placeholder="Image" value="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+                <a class="btn btn-secondary" href="/products"><i class="fa fa-list-alt"></i> View All</a>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,34 @@
+<%- include('partical/header'); -%>
+<body>
+    <div class="container bg-light" style="padding:5%">
+       <center> <h2>Product Details</h2></center>
+
+       <br>
+        <div class="row">
+            <div class="col-3">
+                <div class="card" style="width:250px">
+                    <img class="card-img-top" src="<%=list.productImage %>" width="200" height="140" alt="" />
+                
+                    <div class="card-body">
+                        <h4 class="card-title">Name:
+                            <%= list.name %>
+                        </h4>
+                        <p class="card-text">Price:
+                            <%= list.price %>
+                        </p>
+                        <p class="card-text">id:
+                            <%= list.id %>
+                        </p>
+                        <a href="#" class="btn btn-primary">Order</a>
+                        <a href="/products" class="btn btn-info">Cancel</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+
+    </div>
+</body>
+
+</html>
