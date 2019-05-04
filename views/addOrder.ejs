@@ -2,10 +2,10 @@
 <body style="padding:10% 30% 10%">
     <div class="container bg-light">
      <h3>Add Product</h3>
-        <form action="/order" method="POST" autocomplete="off" enctype="multipart/form-data">
+        <form action="/order" method="POST" autocomplete="off" enctype="application/x-www-form-urlencoded">
             <div class="form-group">
                 <label>Product Id</label>
-                <input type="text" class="form-control" name="productId" value="<%= id %>" readonly>
+                <input type="text" class="form-control" name="productId" name="productId" value="<%= id %>" readonly>
             </div>
             <div class="form-group">
                 <label>Quantity</label>

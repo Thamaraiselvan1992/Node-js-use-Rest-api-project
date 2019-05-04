@@ -27,9 +27,7 @@ app.use((req,res,next)=>{
     }
     next()
 })
-app.get('/',(req,res)=>{
-    res.render('home')
-})
+app.use(express.static('public'));
 app.use('/products',productRouter)
 app.use('/order',orderRouter)
 app.use('/user',singupRouter)
@@ -44,5 +42,5 @@ app.use((error,req,res,next)=>{
         message:error.message
     })
 })
-
+  
 module.exports=app;

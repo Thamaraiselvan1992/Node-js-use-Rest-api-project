@@ -1,16 +1,20 @@
 <%- include('partical/header'); -%>
-<body>
-    <div class="container bg-light" style="padding:5%">
-       <center> <h2>Order List<a class="btn btn-success float-right" href="#">Buy Now</a></h2></center>
 
-       <br>
+<body>
+    <% if(dest ==='list') { %>
+    <div class="container bg-light" style="padding:5%">
+        <center>
+            <h2>Order List<a class="btn btn-success float-right" href="#">Buy Now</a></h2>
+        </center>
+
+        <br>
         <div class="row">
-                <% for(var i=0; i < list.length; i++) { %>
+            <% for(var i=0; i < list.length; i++) { %>
             <div class="col-3">
                 <div class="card" style="width:250px">
-            
-                    <img class="card-img-top" src="<%= list[i].product.productImage %>" width="200" height="140" alt="" />
-                
+
+                    <img class="card-img-top" src="<%=list[i].product.productImage %>" width="200" height="140" alt="" />
+
                     <div class="card-body">
                         <h4 class="card-title">Name:
                             <%= list[i].product.name %>
@@ -35,6 +39,74 @@
         </div>
 
     </div>
+    <% } if(dest=='single'){ %>
+    <div class="container bg-light" style="padding:5%">
+        <center>
+            <h2>Order List<a class="btn btn-success float-right" href="/order">All Order</a></h2>
+        </center>
+
+        <br>
+        <div class="row">
+
+            <div class="col-3">
+                <div class="card" style="width:250px">
+                    <img class="card-img-top" src="<%= order.product.productImage %>" width="200" height="140" alt="" />
+
+                    <div class="card-body">
+                        <h4 class="card-title">Name:
+                            <%= order.product.name %>
+                        </h4>
+                        <p class="card-text">Quantity:
+                            <%= order.quantity %>
+                        </p>
+                        <p class="card-text">price:
+                            <%= order.product.price %>
+                        </p>
+                        <p class="card-text">Order id:
+                            <%= order.id %>
+                        </p>
+
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-3">
+                <img class="card-img-top" src="<%= order.product.productImage %>" width="400" height="300" alt="" />
+            </div>
+
+        </div>
+
+    </div>
+    <% } if(dest=='addOrder'){ %>
+    <div class="container bg-light" style="padding:5%">
+        <center>
+            <h2>Order<a class="btn btn-success float-right" href="/order">All Order</a></h2>
+        </center>
+
+        <br>
+        <div class="row">
+
+            <div class="col-3">
+                <center>
+                    <div class="card" style="width:800px">
+                        <div class="card-body">
+                            <p class="card-text">Order id:
+                                <%= order.id %>
+                            </p>
+                            <p class="card-text">Quantity:
+                                <%= order.quantity %>
+                            </p>
+                        </div>
+                    </div>
+                </center>
+                <br>
+            </div>
+
+
+        </div>
+
+    </div>
+    <%}%>
 </body>
 
 </html>

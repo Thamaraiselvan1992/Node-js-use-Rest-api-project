@@ -36,8 +36,8 @@ router.get('/', (req, res, next) => {
         .then(docs => {
 
             res.render('products', {
+                dest:'list',
                 list: docs,
-          
                 tittle: 'Products'
             });
         })
@@ -74,9 +74,6 @@ router.post('/', upload.single('productImage'), (req, res, next) => {
         })
 }
 )
-
-
-
 router.get('/:productId',upload.single('productImage'), (req, res, next) => {
     const id = req.params.productId;
     Product.findById(id)
@@ -84,8 +81,9 @@ router.get('/:productId',upload.single('productImage'), (req, res, next) => {
     .exec().
     then(docs => {
         if (docs) {
-            res.render('productDetails', {
+            res.render('products', {
                 tittle: 'Product Details',
+                dest:'single',
                 list: docs
             })
         } else {
@@ -101,9 +99,8 @@ router.get('/:productId',upload.single('productImage'), (req, res, next) => {
 
     })
 })
-router.delete('/:productId', (req, res, next) => {
-    const id = req.params.productId;
-    Product.remove({ _id: id })
+router.delete('/delete/:productId', (req, res, next) => {
+    Product.findByIdAndRemove(req.params.productId)
         .exec().
         then(result => {
             console.log(result)
@@ -141,4 +138,6 @@ router.patch('/:productId', (req, res, next) => {
 
         })
 })
+
+
 module.exports = router;
