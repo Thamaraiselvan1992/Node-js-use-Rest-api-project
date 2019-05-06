@@ -7,7 +7,7 @@ const productRouter=require('./api/routes/product')
 const orderRouter=require('./api/routes/order')
 const singupRouter=require('./api/routes/user')
 
-mongoose.connect("mongodb+srv://Thamaraiselvan:"+process.env.MONGO_ATLAS_PW+"@cluster0-66r7n.mongodb.net/test", { useNewUrlParser: true }, (err) => {
+mongoose.connect("mongodb+srv://mangodb username:"+process.env.MONGO_ATLAS_PW+"@cluster0-66r7n.mongodb.net/db name", { useNewUrlParser: true }, (err) => {
     if (!err) {
         console.log('Sucessfully connected')
     } else {
